@@ -25,5 +25,5 @@
 <p align="left"><b>Todo projeto foi feito e executado em plataforma Windows.</b></p>
 <p align="left">Para rodar esse projeto siga os passos a seguir:</p>
 <p align="left">1. Para rodar esse projeto é necessário ter o Visual Studio ou Visual Studio Code instalado.</p>
-<p align="left">2. Com o VS instalado você clonar o projeto no github executando o camando: git clone git://github.com/schacon/grit.git.</p>
+<p align="left">2. Com o VS instalado você clonar o projeto no github executando o camando: git clone gh repo clone alanraysilva/MetragemCore ou pela url: </p>
 
