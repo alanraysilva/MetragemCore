@@ -1,6 +1,7 @@
 
 # os comandos do docker file servem para compilar por prompt de comando somente nao 
-# funciona me modo debug
+# funciona me modo debug 
+# para utilizar em modo debug copie e cole da versao dockfile.original que se encontra no diretorio
 # Get Base Image (Full .NET Core SDK)
 FROM mcr.microsoft.com/dotnet/sdk:3.1 AS build
 WORKDIR /app
