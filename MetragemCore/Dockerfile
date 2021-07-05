@@ -19,4 +19,4 @@ WORKDIR /app
 EXPOSE 80
 COPY --from=build-env /app/out .
 ENTRYPOINT ["dotnet", "MetragemCore.dll"]
-CMD ASPNETCORE_URLS=http://*:$PORT dotnet HerokuApp.dll
+CMD ASPNETCORE_URLS=http://*:$PORT dotnet MetragemCore.dll
