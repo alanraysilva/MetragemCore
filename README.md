@@ -8,8 +8,8 @@
 <ol class="inside square">
     <li> 2 API:
         <ol class="inside square">
-            <li>API1 - Retorna o valor fixo do metro quadrado no Endpoint: https://url/api/Metragem/CalculaValorMetro</li>
-            <li>API2 - Recebe quantidade de metros quadrados e calcula o valor do imóvel no Endpoint: https://url/api/Metragem/CalculaValorImovel</li>
+            <li>API1 - Retorna o valor fixo do metro quadrado no Endpoint:https://url:{porta}/api/Metragem/CalculaValorMetro</li>
+            <li>API2 - Recebe quantidade de metros quadrados e calcula o valor do imóvel no Endpoint: https://url:{porta}/api/Metragem/CalculaValorImovel</li>
         </ol>
     </li>
     <li>Boa praticas em desenvolvimento.</li>
