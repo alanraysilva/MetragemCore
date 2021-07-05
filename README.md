@@ -15,7 +15,7 @@
     <li>Boa praticas em desenvolvimento.</li>
     <li>Padrões de codificação.</li>
     <li>Execução do projeto suportado em Docker no ambiente Linux como container.</li>
-    <li>Suporte ao Swagger.</li>
+    <li>Suporte ao Swagger: https://url:{porta}/swagger/index.html ou  https://metragemmvc.herokuapp.com/swagger/index.html.</li>
     <li>Testes unitários e teste de integração.</li>
     <li>Integeração continua e integra continua (CICD), configurado e disponibilizado pelo Heroku.</li>
     <li>Disponibilização da aplicação para teste no heroku na url : https://metragemmvc.herokuapp.com/swagger/index.html.</li>
@@ -37,12 +37,15 @@ https://github.com/alanraysilva/MetragemCore.git
 ```
 <p align="left">3. Com o projeto baixado antes de executa-lo se atente para o arquivo DockerFile, existem dois arquivos um o arquivo DockerFile que irá conter o código para a criação do container por meio do prompt de comando e dentro do arquivo DockeFile1.original, terá os comandos para executar em modo debug, sendo assim caso queira compilar o código em modo debug copie e cole todo o conteudo do arquivo DockerFile1.original para dentro do arquivo DockerFile e assim sucessivamente.</p>
 <p align="left"><b>Essa ação acima é necessária, porque quando desenvolvido pelo Visual Studio o que aconteceu, a IDE gera sua própria codificação do DockerFile, porém essa codificação não consegue ser executada em modo prompt, ocorre quando executado a ação docker built -t o docker gera erro na criação do container, contudo a Microsoft tem um comando auxiliar o dotnet msbuild MetragemCore.csproj /t:ContainerBuild /p:Configuration=Release, que executa a mesma ação do docker build, entretando o mesmo não é satisfatório para criar as outras ações necessárias como subir no DockerHub e Heroku </b></p>
-<p align="left">4. Esse código do github está vinculado a conta do Heroku proporcionando o deploy continuo: </p>
+<p align="left">4. Esse código do github está vinculado a conta do Heroku proporcionando o deploy continuo.</p>
 <p align="left">5. Parar fazer o download do container no DockerHub, para testar a api em funcionamento sem necessidade de compilação: </p>
+
 ```sh
 docker pull alanraysilva/metragemmvc:2.0
 ```
+
 <p align="left">6. Parar fazer o teste a api em funcionamento no Heroku: </p>
+
 ```sh
 https://metragemmvc.herokuapp.com/swagger/index.html.
 ```
