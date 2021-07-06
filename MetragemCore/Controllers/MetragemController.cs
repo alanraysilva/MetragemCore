@@ -1,9 +1,6 @@
 ﻿using MetragemCore.Models;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
 
@@ -97,6 +94,24 @@ namespace MetragemCore.Controllers
             }
 
 
+        }
+
+
+        /// <summary>
+        /// Apenas teste Hello Word!
+        /// </summary>
+        /// <param name="text"></param>
+        /// <returns></returns>
+        [HttpGet]
+        [Route("Hello")]
+        public async Task<IActionResult> GetHelloWord(string texto)
+        {
+            if (string.IsNullOrEmpty(texto))
+                return BadRequest("Variavel texto não pode ser branco ou nulo");
+            
+
+            var resultado = $"Obrigado {texto} por utilizar nosso Hello Word!";
+            return await Task.FromResult(Ok(resultado));
         }
     }
 }
