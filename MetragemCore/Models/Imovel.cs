@@ -8,6 +8,8 @@ namespace MetragemCore.Models
 {
     public class Imovel
     {
+        [JsonProperty("codigo")]
+        public int Codigo { get; set; }
         [JsonProperty("metragem")]
         public double Metragem { get; set; }
         [JsonProperty("valor")]
