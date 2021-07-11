@@ -68,7 +68,7 @@ namespace MetragemCore.Controllers
 
         [AcceptVerbs("GET")]
         [Route("GetValorImovel")]
-        public async Task<IActionResult> GetValorImovel(int IdImovel)
+        public IActionResult GetValorImovel(int IdImovel)
         {
             if (ModelState.IsValid)
             {

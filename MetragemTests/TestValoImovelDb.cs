@@ -10,7 +10,6 @@ using System.Linq;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
-using System.Web.Http;
 using Xunit;
 
 namespace MetragemTests
@@ -25,16 +24,16 @@ namespace MetragemTests
         }
 
         [Fact]
-        public async Task CalculoValorImovelDb_ValorCorretoAsync()
+        public void CalculoValorImovelDb_ValorCorretoAsync()
         {
-            var result = await _controller.GetValorImovel(1) as OkObjectResult;
+            var result =  _controller.GetValorImovel(1) as OkObjectResult;
             Assert.IsType<OkObjectResult>(result);
         }
 
         [Fact]
-        public async Task CalculoValorImovelDb_TodosValoresVazioAsync()
+        public void CalculoValorImovelDb_TodosValoresVazioAsync()
         {
-            var result = await _controller.GetValorImovel(0) as BadRequestObjectResult;
+            var result = _controller.GetValorImovel(0) as BadRequestObjectResult;
             Assert.IsType<BadRequestObjectResult>(result);
         }
     }
