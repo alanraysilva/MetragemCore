@@ -29,7 +29,11 @@ namespace MetragemCore
         public void ConfigureServices(IServiceCollection services)
         {
             var connection = @"Server=(localdb)\mssqllocaldb;Database=AspCore_NovoDB;Trusted_Connection=True;";
-            services.AddDbContext<Context>(options => options.UseSqlServer(connection));
+            //services.AddDbContext<Context>(options => options.UseSqlServer(connection));
+
+            services.AddDbContext<Context>(options => {
+                options.UseSqlServer(connection);
+            }, ServiceLifetime.Transient);
 
             services.AddControllers();
             services.AddSwaggerGen(c =>
