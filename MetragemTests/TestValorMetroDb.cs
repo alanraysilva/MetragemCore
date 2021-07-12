@@ -17,25 +17,16 @@ using Xunit;
 
 namespace MetragemTests
 {
-    public class TestValorMetroDb : IDisposable
+    public class TestValorMetroDb : ControllerBase
     {
         CalculoMetragemDBController _controller;
-        Context _dbCtx;
+
 
         public TestValorMetroDb()
         {
-            var serviceProvider = new ServiceCollection()
-            .AddEntityFrameworkSqlServer()
-            .BuildServiceProvider();
 
-            var builder = new DbContextOptionsBuilder<Context>();
 
-            builder.UseSqlServer($"Server = (localdb)\\mssqllocaldb; Database = AspCore_NovoDB; Trusted_Connection = True;")
-                    .UseInternalServiceProvider(serviceProvider);
-
-            _dbCtx = new Context(builder.Options);
-
-            _controller = new CalculoMetragemDBController(_dbCtx);
+            _controller = new CalculoMetragemDBController();
         }
 
         [Fact]
@@ -53,9 +44,5 @@ namespace MetragemTests
             Assert.IsType<BadRequestObjectResult>(result);
         }
 
-        public void Dispose()
-        {
-            _dbCtx.Database.CloseConnection();
-        }
     }
 }

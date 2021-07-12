@@ -1,4 +1,5 @@
-﻿using MetragemCore.Models;
+﻿using MetragemCore.Data;
+using MetragemCore.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
@@ -19,14 +20,6 @@ namespace MetragemCore.Controllers
     public class CalculoMetragemDBController : ControllerBase
     {
 
-        private readonly Context _context;
-
-        public CalculoMetragemDBController(Context ctx)
-        {
-            _context = ctx;
-        }
-
-
         [AcceptVerbs("GET")]
         [Route("GetValorMetro")]
         public IActionResult ObterValorMetro(int IdImovel)
@@ -42,10 +35,9 @@ namespace MetragemCore.Controllers
                     try
                     {
 
-                        Imovel imovel =  _context.Imovel.Where(x => x.ImovelId == IdImovel).FirstOrDefault();
-                        //DB data = new DB();
+                        DB data = new DB();
 
-                        //Imovel imovel = data.LstImovel.Where(x => x.ImovelId == IdImovel).FirstOrDefault();
+                        Imovel imovel = data.LstImovel.Where(x => x.ImovelId == IdImovel).FirstOrDefault();
                         if (imovel != null)
                         {
                             imovel.ValorMetro = imovel.calculaValorMetro().ToString("F2");
@@ -100,11 +92,11 @@ namespace MetragemCore.Controllers
 
                             if (i1 != null)
                             {
-                                //DB data = new DB();
+                                DB data = new DB();
 
                                 //Imovel imovel = _context.Imovel.Where(x => x.ImovelId == IdImovel).FirstOrDefault();
 
-                                Imovel imovel = _context.Imovel.Where(x => x.ImovelId == IdImovel).FirstOrDefault();
+                                Imovel imovel = data.LstImovel.Where(x => x.ImovelId == IdImovel).FirstOrDefault();
                                 imovel.Metragem = i1.Metragem;
                                 imovel.Valor = Convert.ToDecimal(i1.ValorMetro);
                                 imovel.ValorMetro = Math.Round(imovel.CalculaValorImovel(), MidpointRounding.ToEven).ToString("F2");

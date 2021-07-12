@@ -28,12 +28,6 @@ namespace MetragemCore
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            var connection = @"Server=(localdb)\mssqllocaldb;Database=AspCore_NovoDB;Trusted_Connection=True;";
-            //services.AddDbContext<Context>(options => options.UseSqlServer(connection));
-
-            services.AddDbContext<Context>(options => {
-                options.UseSqlServer(connection);
-            }, ServiceLifetime.Transient);
 
             services.AddControllers();
             services.AddSwaggerGen(c =>
